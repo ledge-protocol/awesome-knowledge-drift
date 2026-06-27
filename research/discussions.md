@@ -31,6 +31,29 @@ Use [templates/source-template.md](../templates/source-template.md) when adding 
 - https://github.com/anthropics/claude-code/issues/68917
 - https://github.com/ArcadeAI/safeword/issues/472
 - https://github.com/do4k/Acorn/issues/13
+
+## FLAG-0.3 Sources
+
+- https://github.com/algoscope-hq/AlgoScope/issues/429
+- https://github.com/berberman/arch-hs/issues/91
+- https://github.com/Elshayib/Audnet/issues/39
+- https://github.com/CARiSMA-Tool/carisma-tool/issues/77
+- https://github.com/bobmatnyc/claude-mpm/issues/354
+- https://github.com/dotenvx/dotenvx/issues/790
+- https://github.com/fontsource/fontsource/issues/1082
+- https://github.com/foxglove/foxglove-sdk/issues/856
+- https://github.com/jenkins-infra/jenkins.io/issues/9066
+- https://github.com/modular/modular/issues/6695
+- https://github.com/xjayk/new-tab-shortcuts/issues/21
+- https://github.com/KillerCodeMonkey/ngx-quill/issues/2066
+- https://github.com/operator-framework/olm-docs/issues/198
+- https://github.com/OpenVoxProject/openvox-docs/issues/187
+- https://github.com/sebastianbergmann/phpunit-documentation-english/issues/418
+- https://github.com/rancher-sandbox/docs.rancherdesktop.io/issues/487
+- https://github.com/roboflow/supervision/issues/2261
+- https://github.com/TheShield2594/theshieldit.com/issues/53
+- https://github.com/unoplatform/uno/issues/17904
+- https://github.com/workbenchdev/Workbench/issues/1018
 - https://news.ycombinator.com/item?id=36555914
 - https://news.ycombinator.com/item?id=47350194
 - https://news.ycombinator.com/item?id=42830215

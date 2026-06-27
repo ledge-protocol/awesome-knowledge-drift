@@ -79,13 +79,14 @@ Public sources are preferred. Reproducible cases are preferred. Neutral summarie
 
 ## Current Evidence Count
 
-As of 2026-06-27, this repository contains 29 drafted Knowledge Drift evidence cases:
+As of 2026-06-27, this repository contains 56 drafted Knowledge Drift evidence case files under `cases/**`:
 
-- AI Context Drift: 9
-- Documentation Drift: 5
-- Architecture Drift: 5
+- AI Context Drift: 11
+- Documentation Drift: 27
+- Architecture Drift: 8
 - Specification Drift: 5
 - Agent Execution Drift: 5
+- Memory Drift: 0
 
 ## Categories of drift
 
