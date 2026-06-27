@@ -77,6 +77,16 @@ Evidence should avoid:
 
 Public sources are preferred. Reproducible cases are preferred. Neutral summaries are preferred.
 
+## Current Evidence Count
+
+As of 2026-06-27, this repository contains 25 drafted Knowledge Drift evidence cases:
+
+- AI Context Drift: 5
+- Documentation Drift: 5
+- Architecture Drift: 5
+- Specification Drift: 5
+- Agent Execution Drift: 5
+
 ## Categories of drift
 
 Initial categories are intentionally broad and may evolve as the evidence base grows.
