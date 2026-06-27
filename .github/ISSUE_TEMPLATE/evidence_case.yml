@@ -1,0 +1,98 @@
+name: Evidence case
+description: Submit a concrete Knowledge Drift case backed by inspectable sources.
+title: "[Evidence case]: "
+labels:
+  - evidence
+  - case
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a specific, inspectable example of Knowledge Drift.
+
+        Contributions should be evidence-first and neutral. Public source URLs, reproduction details, and clear limitations are more useful than opinions or broad claims.
+  - type: input
+    id: source-url
+    attributes:
+      label: Primary source URL
+      description: Link to the public issue, pull request, postmortem, paper, discussion, documentation, or other source.
+      placeholder: https://github.com/org/repo/issues/123
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Neutral summary
+      description: Briefly describe what the source shows without assigning blame or intent.
+      placeholder: The issue thread shows that generated code relied on an outdated API contract while the current implementation used a different contract.
+    validations:
+      required: true
+  - type: dropdown
+    id: drift-category
+    attributes:
+      label: Primary drift category
+      description: Choose the closest primary category. Mention secondary categories below if needed.
+      options:
+        - AI context drift
+        - Documentation drift
+        - Architecture drift
+        - Agent execution drift
+        - Specification drift
+        - Memory drift
+        - Other or unclear
+    validations:
+      required: true
+  - type: textarea
+    id: mismatch
+    attributes:
+      label: What mismatched?
+      description: Identify the human intent, machine knowledge, and observable reality involved, where applicable.
+      placeholder: |
+        Human intent:
+        Machine knowledge:
+        Observable reality:
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and relevant excerpts
+      description: List source URLs, timestamps, file paths, issue comments, commits, or short excerpts needed to inspect the case.
+      placeholder: |
+        - Source URL:
+        - Relevant comment, section, commit, or timestamp:
+        - What this evidence supports:
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction or inspection steps
+      description: Include steps another reader can use to inspect or reproduce the mismatch, if available.
+      placeholder: |
+        1. Open the linked issue.
+        2. Compare the documented behavior with the referenced implementation.
+        3. Observe the failing test or reported behavior.
+    validations:
+      required: false
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations and caveats
+      description: State what the evidence does not prove, what is missing, or where interpretation is uncertain.
+      placeholder: The source does not include the original private prompt, so the machine knowledge component is inferred from the generated output.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution checks
+      options:
+        - label: I included at least one source URL that readers can inspect.
+          required: true
+        - label: I described observable evidence, not just an opinion or general complaint.
+          required: true
+        - label: I avoided secrets, private customer data, and non-public internal material.
+          required: true
+        - label: I used a neutral tone and avoided vendor blame.
+          required: true

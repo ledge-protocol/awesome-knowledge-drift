@@ -1,0 +1,72 @@
+name: Repository bug
+description: Report a broken link, incorrect citation, formatting problem, or repository maintenance issue.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for repository maintenance problems such as broken links, incorrect citations, formatting issues, duplicate entries, or files that do not match the contribution guidelines.
+
+        If you are submitting a new Knowledge Drift example, use the Evidence case template instead.
+  - type: dropdown
+    id: bug-type
+    attributes:
+      label: Problem type
+      options:
+        - Broken link
+        - Incorrect or missing citation
+        - Formatting or rendering problem
+        - Duplicate or misplaced entry
+        - Inaccurate summary
+        - Privacy or safety concern
+        - Other repository issue
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Repository location
+      description: Link or path to the affected file, section, issue, or pull request.
+      placeholder: taxonomy/knowledge-drift-taxonomy.md
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What did you observe?
+      description: Describe the concrete problem. Include URLs, rendered output, or exact text where useful.
+      placeholder: The source link in this entry returns 404.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected correction
+      description: Describe the correction or expected repository behavior, if known.
+      placeholder: Replace the broken link with the archived source URL.
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Provide source URLs, archive links, screenshots, command output, or other inspectable evidence supporting the report.
+      placeholder: |
+        - Current URL:
+        - Correct URL or archive URL:
+        - Date checked:
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution checks
+      options:
+        - label: I included enough detail for maintainers to inspect the problem.
+          required: true
+        - label: I avoided submitting a general opinion or unsupported claim.
+          required: true
+        - label: I did not include secrets, private logs, or non-public data.
+          required: true

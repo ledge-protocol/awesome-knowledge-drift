@@ -1,0 +1,71 @@
+name: Taxonomy improvement
+description: Propose a category, classification, or structural improvement backed by examples.
+title: "[Taxonomy]: "
+labels:
+  - taxonomy
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to propose improvements to the Knowledge Drift taxonomy.
+
+        Taxonomy changes should be grounded in evidence, examples, or recurring classification problems.
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Type of taxonomy change
+      options:
+        - Add a category
+        - Rename a category
+        - Split a category
+        - Merge categories
+        - Clarify category boundaries
+        - Reclassify existing material
+        - Other taxonomy issue
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the taxonomy change in concrete terms.
+      placeholder: Add a subcategory for cases where generated summaries preserve outdated project state after the source files change.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or examples
+      description: Link cases, papers, issues, pull requests, discussions, or repository files that show why this change is useful.
+      placeholder: |
+        - Source URL:
+        - Existing repository path:
+        - Classification problem this demonstrates:
+    validations:
+      required: true
+  - type: textarea
+    id: distinction
+    attributes:
+      label: Boundary with existing categories
+      description: Explain how this differs from or relates to existing taxonomy categories.
+      placeholder: This overlaps with AI context drift, but the recurring issue is persistent memory rather than retrieved context.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected impact
+      description: Explain how this would improve classification, review, research use, or contributor clarity.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution checks
+      options:
+        - label: I included evidence, examples, or repository references supporting the taxonomy change.
+          required: true
+        - label: I explained how the proposed change relates to existing categories.
+          required: true
+        - label: I avoided solution-first or vendor-specific framing.
+          required: true

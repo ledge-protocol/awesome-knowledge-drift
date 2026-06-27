@@ -1,0 +1,78 @@
+name: Terminology or glossary
+description: Propose a definition, wording change, or glossary entry with supporting sources.
+title: "[Terminology]: "
+labels:
+  - terminology
+  - glossary
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for glossary terms, definition changes, naming concerns, or wording improvements.
+
+        Terminology should help readers compare evidence consistently. Please support proposed terms with sources, examples, or repository usage.
+  - type: input
+    id: term
+    attributes:
+      label: Term or phrase
+      placeholder: Machine knowledge
+    validations:
+      required: true
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request type
+      options:
+        - Add a new term
+        - Revise an existing definition
+        - Clarify usage
+        - Rename a term
+        - Remove or avoid a term
+        - Other terminology issue
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-wording
+    attributes:
+      label: Proposed wording
+      description: Provide the definition or wording you suggest.
+      placeholder: Machine knowledge refers to the project state represented in an AI assistant, retrieval index, memory, generated summary, or other tool context.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence or usage
+      description: Link sources, papers, discussions, or repository paths that support this term or show why the change is needed.
+      placeholder: |
+        - Source URL:
+        - Repository path:
+        - Existing usage or ambiguity:
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: List nearby terms or competing definitions, if relevant.
+      placeholder: Context state, model context, retrieved project knowledge.
+    validations:
+      required: false
+  - type: textarea
+    id: caveats
+    attributes:
+      label: Caveats or scope limits
+      description: State where this term should not be used or where the definition may be too broad.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution checks
+      options:
+        - label: I included a source, example, or repository reference supporting this terminology change.
+          required: true
+        - label: I focused on clarity and research usefulness rather than branding or promotion.
+          required: true
+        - label: I avoided speculative claims that cannot be inspected.
+          required: true
