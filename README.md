@@ -79,7 +79,7 @@ Public sources are preferred. Reproducible cases are preferred. Neutral summarie
 
 ## Current Evidence Count
 
-As of 2026-06-27, this repository contains 56 drafted Knowledge Drift evidence case files under `cases/**`:
+As of 2026-06-27, this repository contains 56 drafted Knowledge Drift evidence case files matching `cases/**/*.md`:
 
 - AI Context Drift: 11
 - Documentation Drift: 27
