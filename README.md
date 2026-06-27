@@ -1,81 +1,77 @@
-# Awesome Knowledge Drift
+# Knowledge Drift Evidence Repository
 
-Software teams are now building with humans, codebases, documents, and AI coding tools all carrying different versions of the project in their heads. Sometimes the README says one thing, the code does another, the architecture decision record says a third, and the AI agent confidently implements against a fourth. This repository collects evidence of that mismatch.
+This repository collects public evidence of **Knowledge Drift** in software projects.
 
-**Knowledge Drift** occurs when **Human Intent**, **Machine Knowledge**, and **Observable Reality** no longer describe the same project state.
-
-This is a public research repository for documenting the problem clearly, neutrally, and with evidence.
-
-## What is Knowledge Drift?
-
-Modern software projects now have three realities:
+Knowledge Drift occurs when two or more descriptions of the same project state no longer agree. In this repository, the descriptions usually involve:
 
 1. **Human Intent**: what people meant, requested, decided, expected, or agreed to.
-2. **Machine Knowledge**: what an AI assistant, coding agent, retrieval system, memory, index, or generated summary appears to know.
-3. **Observable Reality**: what the code, tests, runtime behavior, logs, configuration, and repository history actually show.
+2. **Machine Knowledge**: the project state available to an automated or AI-assisted system.
+3. **Observable Reality**: what can be inspected in source code, tests, build output, runtime behavior, logs, configuration, repository history, or public project discussion.
 
-Knowledge Drift happens when those realities diverge.
+The repository is evidence-driven. It is not a benchmark, vendor scorecard, product catalogue, or argument for a single workflow.
 
-Concrete examples:
+## The Problem
 
-- An AI agent implements against stale assumptions from an earlier version of the project.
-- A README says one thing, but the code does another.
-- An architecture decision record says a decision was made, but the implementation changed later.
-- Cursor or Claude Code loses architectural context and edits against the wrong boundary.
-- A team believes authentication uses one provider, but the code uses another.
-- A generated implementation satisfies the literal prompt while violating unstated human intent.
-- Documentation describes an API contract that tests no longer enforce.
-- A task specification changes, but an agent continues executing the older version.
+Software projects are described by many knowledge sources: requirements, tickets, documentation, code, tests, architecture decisions, generated summaries, model context, and human conventions. These sources can become inconsistent as the project changes.
 
-These are not rare edge cases for teams using AI coding tools. They are familiar failure modes: the tool is not necessarily broken, the humans are not necessarily careless, and the code may even compile. The problem is that the project has stopped agreeing with itself.
+Examples:
 
-## Why this repository exists
+- A README command no longer works on a clean checkout.
+- API documentation describes a parameter that has been removed.
+- An architecture decision says code should use one boundary, but implementation bypasses it.
+- A task specification changes, but an automated agent continues working from the older version.
+- A model receives a retrieved file set that omits the module needed to understand the requested change.
+- A saved project summary says a migration is complete when the repository shows it is partial.
 
-The mission of this repository is to collect real-world cases, discussions, papers, and examples showing that documentation, AI context, architecture decisions, and agent execution frequently diverge from reality.
+The relevant failure is not simply that a tool made a mistake or that documentation is stale. The failure is that two or more knowledge sources make incompatible claims about the same project state.
 
-The goal is not to prove that one tool is bad or that one workflow is correct. The goal is to make Knowledge Drift easier to see, classify, discuss, and study.
+## Why This Matters
 
-This repository exists to:
+AI-assisted development increases the amount of work performed from compressed, retrieved, inferred, or remembered project context. That context can be useful, but it can also be incomplete or stale.
 
-- Gather public examples in one place.
-- Classify recurring drift patterns.
-- Encourage reproducible case reports.
-- Support neutral discussion across tools, vendors, and workflows.
-- Help researchers and practitioners reason from evidence instead of anecdotes.
+A generated change may compile while violating a requirement that was never encoded in tests. A reviewer may trust documentation that no longer matches code. An agent may act on an earlier task description after the issue has changed. A project memory may preserve an obsolete convention and influence later work.
 
-## Why this matters now
+Knowledge Drift gives these cases a common vocabulary so they can be collected, compared, and studied from evidence.
 
-AI coding tools increase the amount of software written from compressed, retrieved, inferred, or remembered project context.
-
-That context is often useful. It is also often incomplete.
-
-A human reviewer may remember the product constraint but miss the generated implementation detail. An agent may see the function signature but miss the architecture rule. A model may follow an old README because the code moved faster than the docs. A team may trust a passing test suite even though the original intent was never encoded in tests.
-
-As AI-assisted development becomes normal, the cost of stale project knowledge moves from occasional confusion to repeated execution risk. More work is being delegated to systems that can act quickly on partial truth.
-
-Knowledge Drift is the name for that gap.
-
-## What counts as evidence
+## What Counts as Evidence
 
 Good evidence is specific, attributable, and inspectable.
 
 Preferred evidence includes:
 
-- Public bug reports, issue threads, pull requests, postmortems, or design discussions.
-- Reproducible examples showing a mismatch between stated intent, machine context, and observed behavior.
+- Public issues, pull requests, discussions, postmortems, or design records.
+- Reproducible examples showing a mismatch between knowledge sources.
 - Academic papers, technical reports, or empirical studies.
-- Engineering blog posts with concrete examples and enough detail to evaluate the claim.
+- Engineering posts with concrete examples and enough detail to evaluate the claim.
 - Tool behavior reports that include inputs, outputs, environment details, and reproduction steps.
 
 Evidence should avoid:
 
 - Unsupported claims.
 - Vendor blame.
-- Hype or solution-first framing.
-- Private information, secrets, or non-public customer details.
+- Promotional or solution-first framing.
+- Private information, secrets, credentials, or non-public customer details.
 - Broad complaints that cannot be inspected or reproduced.
 
 Public sources are preferred. Reproducible cases are preferred. Neutral summaries are preferred.
+
+## How Cases Are Described
+
+Each case should identify:
+
+- The knowledge sources that disagreed.
+- The specific mismatch.
+- The project state at the time of observation.
+- The evidence that supports the claim.
+- The limits of what can be concluded.
+
+Case files use three comparison points:
+
+- **Human Intent vs Machine Knowledge**
+- **Machine Knowledge vs Observable Reality**
+- **Human Intent vs Observable Reality**
+
+Not every case must involve all three. A useful case can show a clear mismatch between any two knowledge sources.
 
 ## Current Evidence Count
 
@@ -88,37 +84,44 @@ As of 2026-06-27, this repository contains 56 drafted Knowledge Drift evidence c
 - Agent Execution Drift: 5
 - Memory Drift: 0
 
-## Categories of drift
+## Categories
 
-Initial categories are intentionally broad and may evolve as the evidence base grows.
+The current taxonomy has one root concept, **Knowledge Drift**, with these direct child categories:
 
-- **AI context drift**: The context available to an AI system no longer reflects the current project state.
-- **Documentation drift**: Documentation, comments, README files, or generated docs no longer match implementation or behavior.
-- **Architecture drift**: Architecture decisions, diagrams, boundaries, or intended designs diverge from the implemented system.
-- **Agent execution drift**: Automated or semi-automated agents execute against stale goals, incomplete instructions, or outdated assumptions.
-- **Specification drift**: Requirements, tickets, acceptance criteria, or product specifications diverge from what is built or tested.
-- **Memory drift**: Persistent memories, summaries, cached state, or project notes become stale, incomplete, or misleading.
+- **AI Context Drift**: the context supplied to an AI system does not reflect the current project state.
+- **Documentation Drift**: written documentation diverges from implementation, tests, configuration, or runtime behavior.
+- **Architecture Drift**: the implemented system diverges from intended architecture, boundaries, decisions, or diagrams.
+- **Agent Execution Drift**: an automated or semi-automated agent continues acting on stale, incomplete, or changed instructions.
+- **Specification Drift**: requirements, acceptance criteria, tickets, or product specifications diverge from implementation or tests.
+- **Memory Drift**: persistent project memory, summaries, notes, or cached state become stale, incomplete, or misleading.
 
-See [taxonomy/knowledge-drift-taxonomy.md](taxonomy/knowledge-drift-taxonomy.md) for a fuller working taxonomy.
+See [taxonomy/knowledge-drift-taxonomy.md](taxonomy/knowledge-drift-taxonomy.md) for definitions, examples, non-examples, and classification guidance.
 
-## How to contribute
+## Repository Structure
 
-Submit a case if you have seen this happen.
+- [cases/](cases/) contains drafted evidence cases grouped by primary category.
+- [taxonomy/](taxonomy/) defines the working taxonomy.
+- [glossary/](glossary/) defines stable terms used across the repository.
+- [research/](research/) lists papers, engineering posts, discussions, and tools relevant to the topic.
+- [templates/](templates/) contains templates for new cases and sources.
+- [ledge/](ledge/) explains the repository's relationship to Ledge.
+
+## How to Contribute
+
+Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Useful contributions include:
 
 - Adding a new case using [templates/case-template.md](templates/case-template.md).
 - Adding a source using [templates/source-template.md](templates/source-template.md).
 - Improving the taxonomy with clearer distinctions.
-- Adding definitions to the glossary.
-- Linking relevant papers, engineering blogs, discussions, or tools.
+- Adding or refining glossary definitions.
+- Linking relevant papers, engineering posts, discussions, or tools.
 - Strengthening existing entries with better citations or reproduction details.
 
-A good contribution does not need to be dramatic. A small, well-documented mismatch is more useful than a broad claim.
+A small, well-documented mismatch is more useful than a broad claim. Contributions should stay neutral and should make the evidence easier for others to inspect.
 
-Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## What this repository is not
+## What This Repository Is Not
 
 This repository is not:
 
