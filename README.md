@@ -1,32 +1,41 @@
 # Awesome Knowledge Drift
 
-Awesome Knowledge Drift is a public research repository for collecting evidence that Knowledge Drift is a recurring problem in AI-assisted software development.
+Software teams are now building with humans, codebases, documents, and AI coding tools all carrying different versions of the project in their heads. Sometimes the README says one thing, the code does another, the architecture decision record says a third, and the AI agent confidently implements against a fourth. This repository collects evidence of that mismatch.
 
-Knowledge Drift occurs when **Human Intent**, **Machine Knowledge**, and **Observable Reality** no longer describe the same project state.
+**Knowledge Drift** occurs when **Human Intent**, **Machine Knowledge**, and **Observable Reality** no longer describe the same project state.
 
-This repository focuses on the problem, not a particular product, vendor, or solution.
+This is a public research repository for documenting the problem clearly, neutrally, and with evidence.
 
 ## What is Knowledge Drift?
 
-Software projects depend on many forms of knowledge: requirements, documentation, architecture decisions, implementation details, tests, tickets, design discussions, and the context supplied to AI systems.
+Modern software projects now have three realities:
 
-Knowledge Drift happens when those sources diverge.
+1. **Human Intent**: what people meant, requested, decided, expected, or agreed to.
+2. **Machine Knowledge**: what an AI assistant, coding agent, retrieval system, memory, index, or generated summary appears to know.
+3. **Observable Reality**: what the code, tests, runtime behavior, logs, configuration, and repository history actually show.
 
-Examples include:
+Knowledge Drift happens when those realities diverge.
 
-- Documentation says an API behaves one way, but the implementation behaves another way.
-- An AI coding assistant acts on stale or incomplete context.
-- An architecture decision record describes a design that the codebase no longer follows.
-- A task specification is updated, but an execution agent continues using an older version.
-- A team believes a behavior is covered by tests, but the observable system does not enforce it.
+Concrete examples:
 
-In AI-assisted development, drift can compound quickly because tools may rely on partial snapshots of project knowledge while producing changes that alter the project state again.
+- An AI agent implements against stale assumptions from an earlier version of the project.
+- A README says one thing, but the code does another.
+- An architecture decision record says a decision was made, but the implementation changed later.
+- Cursor or Claude Code loses architectural context and edits against the wrong boundary.
+- A team believes authentication uses one provider, but the code uses another.
+- A generated implementation satisfies the literal prompt while violating unstated human intent.
+- Documentation describes an API contract that tests no longer enforce.
+- A task specification changes, but an agent continues executing the older version.
+
+These are not rare edge cases for teams using AI coding tools. They are familiar failure modes: the tool is not necessarily broken, the humans are not necessarily careless, and the code may even compile. The problem is that the project has stopped agreeing with itself.
 
 ## Why this repository exists
 
-The goal of this repository is to collect real-world cases, discussions, papers, and examples showing that documentation, AI context, architecture decisions, and agent execution frequently diverge from reality.
+The mission of this repository is to collect real-world cases, discussions, papers, and examples showing that documentation, AI context, architecture decisions, and agent execution frequently diverge from reality.
 
-The repository exists to make the problem easier to study:
+The goal is not to prove that one tool is bad or that one workflow is correct. The goal is to make Knowledge Drift easier to see, classify, discuss, and study.
+
+This repository exists to:
 
 - Gather public examples in one place.
 - Classify recurring drift patterns.
@@ -34,7 +43,17 @@ The repository exists to make the problem easier to study:
 - Support neutral discussion across tools, vendors, and workflows.
 - Help researchers and practitioners reason from evidence instead of anecdotes.
 
-This is not a repository for promoting a specific fix. It is a shared evidence base for understanding the problem.
+## Why this matters now
+
+AI coding tools increase the amount of software written from compressed, retrieved, inferred, or remembered project context.
+
+That context is often useful. It is also often incomplete.
+
+A human reviewer may remember the product constraint but miss the generated implementation detail. An agent may see the function signature but miss the architecture rule. A model may follow an old README because the code moved faster than the docs. A team may trust a passing test suite even though the original intent was never encoded in tests.
+
+As AI-assisted development becomes normal, the cost of stale project knowledge moves from occasional confusion to repeated execution risk. More work is being delegated to systems that can act quickly on partial truth.
+
+Knowledge Drift is the name for that gap.
 
 ## What counts as evidence
 
@@ -73,7 +92,7 @@ See [taxonomy/knowledge-drift-taxonomy.md](taxonomy/knowledge-drift-taxonomy.md)
 
 ## How to contribute
 
-Contributions are welcome when they improve the quality of the evidence base.
+Submit a case if you have seen this happen.
 
 Useful contributions include:
 
@@ -83,6 +102,8 @@ Useful contributions include:
 - Adding definitions to the glossary.
 - Linking relevant papers, engineering blogs, discussions, or tools.
 - Strengthening existing entries with better citations or reproduction details.
+
+A good contribution does not need to be dramatic. A small, well-documented mismatch is more useful than a broad claim.
 
 Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md).
 
