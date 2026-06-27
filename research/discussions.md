@@ -31,3 +31,7 @@ Use [templates/source-template.md](../templates/source-template.md) when adding 
 - https://github.com/anthropics/claude-code/issues/68917
 - https://github.com/ArcadeAI/safeword/issues/472
 - https://github.com/do4k/Acorn/issues/13
+- https://news.ycombinator.com/item?id=36555914
+- https://news.ycombinator.com/item?id=47350194
+- https://news.ycombinator.com/item?id=42830215
+- https://news.ycombinator.com/item?id=42434886
